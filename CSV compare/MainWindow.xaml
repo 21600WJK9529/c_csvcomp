@@ -1,0 +1,29 @@
+﻿<Window x:Class="CSV_compare.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CSV_compare"
+        mc:Ignorable="d"
+        Title="CSV compare" Height="799" Width="1200">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="101*"/>
+            <ColumnDefinition Width="163*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="btnCsv1" Content="Select csv" HorizontalAlignment="Left" Margin="83,33,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" Height="25"/>
+        <Button x:Name="btnCsv2" Content="Select csv" HorizontalAlignment="Left" Margin="83,83,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1" Height="25"/>
+        <Label x:Name="lblCsv1" Content="" HorizontalAlignment="Left" Margin="173,33,0,0" VerticalAlignment="Top" Height="25" Width="600" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblCsv2" Content="" HorizontalAlignment="Left" Margin="173,83,0,0" VerticalAlignment="Top" Height="25" Width="600" Grid.ColumnSpan="2"/>
+        <RichTextBox x:Name="rtCsv1" HorizontalAlignment="Left" Height="555" Margin="83,191,0,0" VerticalAlignment="Top" Width="500" Grid.ColumnSpan="2">
+            <FlowDocument/>
+        </RichTextBox>
+        <RichTextBox x:Name="rtCsv2" HorizontalAlignment="Left" Height="555" Margin="132,191,0,0" VerticalAlignment="Top" Width="500" Grid.Column="1">
+            <FlowDocument/>
+        </RichTextBox>
+        <Label x:Name="lblCsvResults1" Content="Csv 1" HorizontalAlignment="Left" Margin="83,160,0,0" VerticalAlignment="Top"/>
+        <Label Content="Csv 2" Grid.Column="1" HorizontalAlignment="Left" Margin="132,160,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnCsvRun" Content="Run" HorizontalAlignment="Left" Margin="83,130,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2" Height="25"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29306.81
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSV compare", "CSV compare\CSV compare.csproj", "{AF42C7B1-A883-4C2F-94C1-B803036230D5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AF42C7B1-A883-4C2F-94C1-B803036230D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF42C7B1-A883-4C2F-94C1-B803036230D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF42C7B1-A883-4C2F-94C1-B803036230D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF42C7B1-A883-4C2F-94C1-B803036230D5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2BA0D18F-F831-48E4-847E-4CA07F74180F}
+	EndGlobalSection
+EndGlobal
