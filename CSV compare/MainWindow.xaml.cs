@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace CSV_compare
 {
     public partial class MainWindow : Window
@@ -57,12 +58,11 @@ namespace CSV_compare
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             String csv1= lblCsv1.Content.ToString();
-            rtCsv1.AppendText(csv1);//testing if path returns correctly from label text
             String csv2 = lblCsv2.Content.ToString();
-            rtCsv1.AppendText(csv2);//testing if path returns correctly from label text
+
             // Create an instance of StreamReader to read from a file.
             // The using statement also closes the StreamReader.
-            using (StreamReader sr = new StreamReader(csv1))
+                using (StreamReader sr = new StreamReader(csv1))
                 using (StreamReader sr2 = new StreamReader(csv2))
                 {
                 var csv1Line = "";
@@ -73,24 +73,33 @@ namespace CSV_compare
                     csv1Line = sr.ReadLine();
                     csv2Line = sr2.ReadLine();
                     if (csv1Line.Equals(csv2Line))
-                        {
-                        rtCsv1.AppendText(sr.ToString());
-                        rtCsv2.AppendText(sr2.ToString());
+                        {                       
+                        var noErr1 = csv1Line;
+                        var noErr2 = csv2Line;
+                        TextRange tr = new TextRange(rtCsv1.Document.ContentEnd, rtCsv1.Document.ContentEnd);
+                        tr.Text=noErr1+"\r";
+                        tr.ApplyPropertyValue(TextElement.ForegroundProperty, Brushes.Green);
+                        TextRange tr2 = new TextRange(rtCsv2.Document.ContentEnd, rtCsv2.Document.ContentEnd);
+                        tr2.ApplyPropertyValue(TextElement.ForegroundProperty, Brushes.Green);
+                        tr2.Text=noErr2+"\r";
                         }
-                    else
+                    else if(!(csv1Line.Equals(csv2Line)))
                     {
-                        rtCsv1.AppendText("Error line: "+lineNo);
-                        rtCsv2.AppendText("Error line: "+lineNo);
+                        var err1 = "Error line: "+lineNo+":"+csv1Line;
+                        var err2 = csv2Line;
+                        TextRange tr3 = new TextRange(rtCsv1.Document.ContentEnd, rtCsv1.Document.ContentEnd);
+                        tr3.Text=err1+"\r";
+                        tr3.ApplyPropertyValue(TextElement.ForegroundProperty, Brushes.Red);
+                        TextRange tr4 = new TextRange(rtCsv2.Document.ContentEnd, rtCsv2.Document.ContentEnd);
+                        tr4.ApplyPropertyValue(TextElement.ForegroundProperty, Brushes.Red);
+                        tr4.Text=err2+"\r";
                     }
                     lineNo++;
                     }
 
                 }
-            }
-            
-                
-                
-            
+
+            }                
         }
     }
  
