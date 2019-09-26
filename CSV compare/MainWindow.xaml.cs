@@ -76,23 +76,27 @@ namespace CSV_compare
                         {                       
                         var noErr1 = csv1Line;
                         var noErr2 = csv2Line;
+
                         TextRange tr = new TextRange(rtCsv1.Document.ContentEnd, rtCsv1.Document.ContentEnd);
                         tr.Text=noErr1+"\r";
                         tr.ApplyPropertyValue(TextElement.ForegroundProperty, Brushes.Green);
+
                         TextRange tr2 = new TextRange(rtCsv2.Document.ContentEnd, rtCsv2.Document.ContentEnd);
-                        tr2.ApplyPropertyValue(TextElement.ForegroundProperty, Brushes.Green);
                         tr2.Text=noErr2+"\r";
+                        tr2.ApplyPropertyValue(TextElement.ForegroundProperty, Brushes.Green);
                         }
                     else if(!(csv1Line.Equals(csv2Line)))
                     {
-                        var err1 = "Error line: "+lineNo+":"+csv1Line;
+                        var err1 = csv1Line;
                         var err2 = csv2Line;
-                        TextRange tr3 = new TextRange(rtCsv1.Document.ContentEnd, rtCsv1.Document.ContentEnd);
-                        tr3.Text=err1+"\r";
-                        tr3.ApplyPropertyValue(TextElement.ForegroundProperty, Brushes.Red);
-                        TextRange tr4 = new TextRange(rtCsv2.Document.ContentEnd, rtCsv2.Document.ContentEnd);
-                        tr4.ApplyPropertyValue(TextElement.ForegroundProperty, Brushes.Red);
-                        tr4.Text=err2+"\r";
+
+                        TextRange tr = new TextRange(rtCsv1.Document.ContentEnd, rtCsv1.Document.ContentEnd);
+                        tr.Text=err1+"\r";
+                        tr.ApplyPropertyValue(TextElement.ForegroundProperty, Brushes.Red);
+
+                        TextRange tr2 = new TextRange(rtCsv2.Document.ContentEnd, rtCsv2.Document.ContentEnd);
+                        tr2.Text=err2+"\r";
+                        tr2.ApplyPropertyValue(TextElement.ForegroundProperty, Brushes.Red);
                     }
                     lineNo++;
                     }
