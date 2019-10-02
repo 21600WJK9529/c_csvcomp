@@ -24,6 +24,7 @@
         <Label x:Name="lblCsvResults1" Content="Csv 1" HorizontalAlignment="Left" Margin="83,160,0,0" VerticalAlignment="Top"/>
         <Label Content="Csv 2" Grid.Column="1" HorizontalAlignment="Left" Margin="132,160,0,0" VerticalAlignment="Top"/>
         <Button x:Name="btnCsvRun" Content="Run" HorizontalAlignment="Left" Margin="83,130,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2" Height="25"/>
+        <Button x:Name="btnCsvClear" Content="Clear" HorizontalAlignment="Left" Margin="163,130,0,0" VerticalAlignment="Top" Width="75" Height="25" Click="BtnCsvClear_Click"/>
 
     </Grid>
 </Window>

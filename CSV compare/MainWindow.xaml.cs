@@ -103,7 +103,13 @@ namespace CSV_compare
 
                 }
 
-            }                
+            }
+
+        private void BtnCsvClear_Click(object sender, RoutedEventArgs e)
+        {
+            rtCsv1.Document.Blocks.Clear();
+            rtCsv2.Document.Blocks.Clear();
         }
+    }
     }
  
